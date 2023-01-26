@@ -1,11 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Profilepage extends StatelessWidget {
-  const Profilepage({super.key});
+import '../widgets/navigation_bar.dart';
 
-  static String imageurl =
-      "https://pbs.twimg.com/profile_images/1608129257221533696/bAxRmtib_400x400.jpg";
+class Profilepage extends StatelessWidget {
+  static List<String> imageurl = [
+    "https://pbs.twimg.com/profile_images/1608129257221533696/bAxRmtib_400x400.jpg",
+    "https://drive.google.com/file/d/1bT2TBnPEtgdV3E8Gf9bKAd7XuIWntT9B/view?usp=share_link",
+    "https://drive.google.com/file/d/1bU1ztSImiVlOeiRk0wNrRCmZAD1ufRc6/view?usp=share_link",
+    "https://drive.google.com/file/d/1bZgjBDnir47AvsFQWWpiiys7Wi7LRlD1/view?usp=share_link",
+    "https://drive.google.com/file/d/1bWS2K9Bu1OT0cPXADIxGqB7P2OHarY_F/view?usp=share_link",
+    "https://drive.google.com/file/d/1bICTGAW3-w4Q2_hR1OQVdLKCnnDWF2e3/view?usp=share_link"
+  ];
+
+  const Profilepage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,18 +53,11 @@ class Profilepage extends StatelessWidget {
               width: 20,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(
-                  height: 10,
-                  width: 10,
-                ),
                 CircleAvatar(
-                  backgroundImage: NetworkImage(imageurl),
+                  backgroundImage: NetworkImage(imageurl[0]),
                   radius: 50,
-                ),
-                SizedBox(
-                  height: 10,
-                  width: 50,
                 ),
                 Text(
                   textAlign: TextAlign.center,
@@ -64,19 +65,11 @@ class Profilepage extends StatelessWidget {
                   style: TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
-                  height: 10,
-                  width: 50,
-                ),
                 Text(
                   textAlign: TextAlign.center,
                   "275 \n Followers",
                   style: TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  height: 10,
-                  width: 50,
                 ),
                 Text(
                   textAlign: TextAlign.center,
@@ -110,7 +103,7 @@ class Profilepage extends StatelessWidget {
                   elevation: 1,
                   child: Text(
                     "                   Edit Profile                   ",
-                    textScaleFactor: 2,
+                    textScaleFactor: 1.6,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -121,7 +114,28 @@ class Profilepage extends StatelessWidget {
                 )
               ],
             ),
+            SizedBox(
+              height: 450,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3),
+                    itemCount: 6,
+                    itemBuilder: (context, index) => Card(
+                          clipBehavior: Clip.antiAlias,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          child: GridTile(
+                            child: Image.network(imageurl[index]),
+                          ),
+                        )),
+              ),
+            ),
           ],
+        ),
+        bottomNavigationBar: BottomAppBar(
+          child: InstaNavigationBar(),
         ));
   }
 }

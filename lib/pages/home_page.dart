@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:insta_clone/utils/routes.dart';
+
+import '../widgets/navigation_bar.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -22,21 +23,23 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   Widget story(String path, String imageurl) {
-    return InkWell(
-      onTap: () {
-        // ignore: avoid_print
-        print("Story viewed");
-      },
-      child: Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            color: Colors.black,
-            shape: BoxShape.circle,
-          ),
-          child: CircleAvatar(
-            backgroundImage: NetworkImage(imageurl, scale: 1),
-          )),
+    return SafeArea(
+      child: InkWell(
+        onTap: () {
+          // ignore: avoid_print
+          print("Story viewed");
+        },
+        child: Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              shape: BoxShape.circle,
+            ),
+            child: CircleAvatar(
+              backgroundImage: NetworkImage(imageurl, scale: 1),
+            )),
+      ),
     );
   }
 
@@ -151,46 +154,7 @@ class _HomepageState extends State<Homepage> {
           ),
         ),
         bottomNavigationBar: BottomAppBar(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, MyRoutes.homepage);
-                },
-                icon: Icon(
-                  CupertinoIcons.home,
-                  size: 40,
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  CupertinoIcons.search,
-                  size: 40,
-                ),
-              ),
-              InkWell(
-                onTap: () {},
-                child: Image.network(
-                  "https://cdn.icon-icons.com/icons2/3237/PNG/512/chatting_social_media_menu_brand_video_instagram_reel_icon_197364.png",
-                  height: 40,
-                  width: 40,
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  CupertinoIcons.heart,
-                  size: 40,
-                ),
-              ),
-              CircleAvatar(
-                backgroundImage: NetworkImage(Homepage.imageurl),
-                radius: 20,
-              )
-            ],
-          ),
+          child: InstaNavigationBar(),
         ));
   }
 }
