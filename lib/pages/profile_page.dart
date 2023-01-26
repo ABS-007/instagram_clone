@@ -6,11 +6,11 @@ import '../widgets/navigation_bar.dart';
 class Profilepage extends StatelessWidget {
   static List<String> imageurl = [
     "https://pbs.twimg.com/profile_images/1608129257221533696/bAxRmtib_400x400.jpg",
-    "https://drive.google.com/file/d/1bT2TBnPEtgdV3E8Gf9bKAd7XuIWntT9B/view?usp=share_link",
-    "https://drive.google.com/file/d/1bU1ztSImiVlOeiRk0wNrRCmZAD1ufRc6/view?usp=share_link",
-    "https://drive.google.com/file/d/1bZgjBDnir47AvsFQWWpiiys7Wi7LRlD1/view?usp=share_link",
-    "https://drive.google.com/file/d/1bWS2K9Bu1OT0cPXADIxGqB7P2OHarY_F/view?usp=share_link",
-    "https://drive.google.com/file/d/1bICTGAW3-w4Q2_hR1OQVdLKCnnDWF2e3/view?usp=share_link"
+    "https://github.com/ABS-007/instagram_clone/blob/main/assets/images/IMG_20211108_093633_199.jpg?raw=true",
+    "https://github.com/ABS-007/instagram_clone/blob/main/assets/images/IMG_20211215_075314_117.jpg?raw=true",
+    "https://github.com/ABS-007/instagram_clone/blob/main/assets/images/IMG_20220620_005417_643.jpg?raw=true",
+    "https://github.com/ABS-007/instagram_clone/blob/main/assets/images/IMG_20220620_005417_699.jpg?raw=true",
+    "https://github.com/ABS-007/instagram_clone/blob/main/assets/images/IMG_20220724_143926_773.jpg?raw=true"
   ];
 
   const Profilepage({super.key});
@@ -67,7 +67,7 @@ class Profilepage extends StatelessWidget {
                 ),
                 Text(
                   textAlign: TextAlign.center,
-                  "275 \n Followers",
+                  "280 \n Followers",
                   style: TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
                 ),

@@ -5,7 +5,7 @@ import '../widgets/navigation_bar.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
-  static int likes = 0;
+  static int likes = 169;
   static bool liked = false;
   static String imageurl =
       "https://pbs.twimg.com/profile_images/1608129257221533696/bAxRmtib_400x400.jpg";
