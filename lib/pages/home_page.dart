@@ -149,7 +149,7 @@ class _HomepageState extends State<Homepage> {
               ),
               SizedBox(height: 10, width: 10),
               post("username", "imageurl"),
-              post("username", "imageurl"),
+              post("username", "storyurl"),
             ],
           ),
         ),
